@@ -54,6 +54,8 @@ public class Arquivo {
                 conteudo = conteudo.replace("  ", " ");
                 
                 String vetor[] = conteudo.split(" ");
+                
+                
 
                 int r = 5;
             }
