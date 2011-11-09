@@ -19,21 +19,21 @@ public class Arquivo {
     
     static public void le_entrada()
     {
-
+        Arvore ap = new Arvore();
         try
         {
             int i;
             FileInputStream fis = new FileInputStream("entrada.txt");
             BufferedReader d = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 
-            String line="" ;
+            String nomeArq="" ;
             String n = d.readLine().replace('﻿',' ').trim();
 
             Integer a = Integer.parseInt(n);
             for(i=0;i<a;i++)
             {
-                line = d.readLine();
-                FileInputStream fisArquivo = new FileInputStream(line);
+                nomeArq = d.readLine();
+                FileInputStream fisArquivo = new FileInputStream(nomeArq);
                 BufferedReader arquivo = new BufferedReader(new InputStreamReader(fisArquivo, "UTF-8"));
                 
                 String conteudo = "";
@@ -54,8 +54,20 @@ public class Arquivo {
                 conteudo = conteudo.replace("  ", " ");
                 
                 String vetor[] = conteudo.split(" ");
-                
-                
+                int j,k;
+                for(j=0;j<vetor.length;j++)
+                {
+                    int c = 20-vetor[j].length();
+                    for(k=0;k<c;k++)
+                        vetor[j]+=" ";
+                    
+                    String bin = Arquivo.StrToBin(vetor[j]);
+                    NoValor n = new NoValor(bin,vetor[j],nomeArq);
+                    
+                    
+                    char array[] = new char[20];
+                    
+                }
 
                 int r = 5;
             }
@@ -63,5 +75,22 @@ public class Arquivo {
         catch (FileNotFoundException e) {}
         catch (IOException e) {}
 
+    }
+    
+    static public String StrToBin(String s)
+    {
+        byte[] bytes = s.getBytes();
+        StringBuilder binary = new StringBuilder();
+        for(byte b: bytes)
+        {
+           int val = b;
+           for(int i=0;i < 8; i++)
+           {
+               binary.append((val & 128) == 0? 0 : 1);
+               val <<= 1;
+           }
+
+        }
+        return binary.toString();
     }
 }
