@@ -62,7 +62,7 @@ public class Arquivo {
                         vetor[j]+=" ";
                     
                     String bin = Arquivo.StrToBin(vetor[j]);
-                    NoValor n = new NoValor(bin,vetor[j],nomeArq);
+                    NoValor nv = new NoValor(bin,vetor[j],nomeArq);
                     
                     
                     char array[] = new char[20];

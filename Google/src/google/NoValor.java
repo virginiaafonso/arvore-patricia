@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author RMOTTA
  */
-public class NoValor {
+public class NoValor extends No{
     String bin;
     String chave;
     ArrayList<Integer> qtde;

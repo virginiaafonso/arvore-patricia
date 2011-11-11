@@ -10,11 +10,15 @@ package google;
  */
 public class Arvore {
     
-        NoCaminho nc;
-        NoValor nv;
+        No raiz=null;
         
-        public void insert(NoValor n){
-            
+        public void insert(No n){
+            if(raiz==null){
+               this.raiz = n;                
+            }
+            else{
+                n.caminha();
+            }
             
             
         }

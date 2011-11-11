@@ -8,6 +8,14 @@ package google;
  *
  * @author RMOTTA
  */
-public class NoCaminho {
+public class NoCaminho extends No{
+    
+
+    int posicao;
+    
+    
+    public NoCaminho(){
+    
+    }
     
 }
